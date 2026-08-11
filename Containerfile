@@ -18,6 +18,8 @@ RUN apt-get update && \
       /usr/share/applications/org.onlyoffice.desktopeditors.desktop && \
     desktop-file-edit --set-key=Icon --set-value=org.onlyoffice.desktopeditors \
       /usr/share/applications/org.onlyoffice.desktopeditors.desktop && \
+    sed -i 's#^Exec=/usr/bin/onlyoffice-desktopeditors#Exec=desktopeditors#' \
+      /usr/share/applications/org.onlyoffice.desktopeditors.desktop && \
     for size in 16 24 32 48 64 128 256; do \
       install -Dm644 "/tmp/onlyoffice/usr/share/icons/hicolor/${size}x${size}/apps/onlyoffice-desktopeditors.png" \
         "/usr/share/icons/hicolor/${size}x${size}/apps/org.onlyoffice.desktopeditors.png"; \
