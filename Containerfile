@@ -4,7 +4,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-    ca-certificates curl libasound2t64 libcups2t64 libx11-xcb1 libxss1 xz-utils && \
+    ca-certificates curl desktop-file-utils libasound2t64 libcups2t64 libx11-xcb1 libxss1 xz-utils && \
     curl -fsSL http://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors-9.4.0-x64.tar.xz \
       -o /tmp/onlyoffice.tar.xz && \
     echo 'd054d35f6c11274755cdad32683e8238f886420756c6cdcbf68c3b89ea66675c  /tmp/onlyoffice.tar.xz' | sha256sum -c - && \
