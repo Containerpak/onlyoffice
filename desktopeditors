@@ -1,0 +1,3 @@
+#!/bin/sh
+export LD_LIBRARY_PATH=/opt/onlyoffice/desktopeditors
+exec /opt/onlyoffice/desktopeditors/DesktopEditors "$@"
