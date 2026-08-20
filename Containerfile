@@ -1,13 +1,14 @@
 FROM ubuntu:26.04 AS source
 
 ARG DEBIAN_FRONTEND=noninteractive
+ARG ONLYOFFICE_URL=http://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors-9.4.0-x64.tar.xz
+ARG ONLYOFFICE_SHA256=d054d35f6c11274755cdad32683e8238f886420756c6cdcbf68c3b89ea66675c
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     ca-certificates curl desktop-file-utils xz-utils && \
-    curl -fsSL http://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors-9.4.0-x64.tar.xz \
-      -o /tmp/onlyoffice.tar.xz && \
-    echo 'd054d35f6c11274755cdad32683e8238f886420756c6cdcbf68c3b89ea66675c  /tmp/onlyoffice.tar.xz' | sha256sum -c - && \
+    curl -fsSL "$ONLYOFFICE_URL" -o /tmp/onlyoffice.tar.xz && \
+    echo "$ONLYOFFICE_SHA256  /tmp/onlyoffice.tar.xz" | sha256sum -c - && \
     mkdir -p /tmp/onlyoffice && \
     tar -xJf /tmp/onlyoffice.tar.xz -C /tmp/onlyoffice && \
     mkdir -p /out/opt/onlyoffice /out/usr/share/applications && \
