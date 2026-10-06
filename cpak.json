@@ -4,7 +4,7 @@
   "name": "ONLYOFFICE Desktop Editors",
   "description": "Edit text documents, spreadsheets, presentations, forms and PDF files.",
   "version": "9.4.0",
-  "image": "ghcr.io/containerpak/onlyoffice@sha256:f47b9ceeec4cb856dd44cc655cd9c01704a55342b2cb05703edf22eb128ef194",
+  "image": "ghcr.io/containerpak/onlyoffice@sha256:6e3c40b4e12d27da220fc3a75ac961d998ebbcdd5f58251311d635f7a6815120",
   "binaries": [
     "/usr/bin/desktopeditors"
   ],
